@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../../componets/navbar/NavBar'
 import { useCart } from '../../componets/cart/CartContext'
 import styles from './Cart.module.css'
-
+import { Link } from 'react-router-dom'
 export default function Cart() {
   const { items, increment, decrement, removeFromCart, subtotal, clearCart } = useCart()
 
@@ -16,7 +16,7 @@ export default function Cart() {
         <h1 className={styles.title}>Your Cart</h1>
 
         {items.length === 0 ? (
-          <div className={styles.empty}>Your cart is empty. <a href="/products">Browse products</a>.</div>
+          <div className={styles.empty}>Your cart is empty. <Link to="/products">Browse products</Link>.</div>
         ) : (
           <section className={styles.content}>
             <ul className={styles.list}>
