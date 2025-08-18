@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './NavBar.module.css'
 import { useCart } from '../cart/CartContext'
 import { useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 const CATEGORY_ITEMS = [
   { label: 'True Wireless', href: '#' },
   { label: 'Neckbands', href: '#' },
@@ -40,9 +40,9 @@ export default function NavBar() {
             Mega Savings Live: Up to 75% OFF + Extra Offers
           </span>
           <nav className={styles.topLinks} aria-label="Quick links">
-            <a href="#" className={styles.topLink}>Track Order</a>
-            <a href="#" className={styles.topLink}>Store Locator</a>
-            <a href="#" className={styles.topLink}>Support</a>
+            <Link to="/track-order" className={styles.topLink}>Track Order</Link>
+            <Link to="/store-locator" className={styles.topLink}>Store Locator</Link>
+            <Link to="/support" className={styles.topLink}>Support</Link>
           </nav>
         </div>
       </div>
@@ -66,9 +66,9 @@ export default function NavBar() {
             </svg>
           </button>
 
-          <a href="/" className={styles.logoLink} aria-label="boAt Clone Home">
+          <Link to="/" className={styles.logoLink} aria-label="boAt Clone Home">
             <img src="/logotitle.png" alt="Brand" className={styles.logoImage} loading="lazy" />
-          </a>
+          </Link>
 
           <form
             className={styles.searchContainer}
@@ -101,23 +101,23 @@ export default function NavBar() {
 
           <div className={styles.actions}>
             {currentUser ? (
-              <a href="/profile" className={styles.actionLink} aria-label="Account">
+            <Link to="/profile" className={styles.actionLink} aria-label="Account">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" strokeWidth="2" />
                   <path d="M3 21a9 9 0 0 1 18 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
                 <span className={styles.actionText}>Hi, {currentUser.name.split(' ')[0]}</span>
-              </a>
+              </Link>
             ) : (
-              <a href="/signin" className={styles.actionLink} aria-label="Login">
+             <Link to="/signin" className={styles.actionLink} aria-label="Login">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" strokeWidth="2" />
                   <path d="M3 21a9 9 0 0 1 18 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
                 <span className={styles.actionText}>Login</span>
-              </a>
+              </Link>
             )}
-            <a href="/cart" className={styles.actionLink} aria-label="Cart">
+            <Link to="/cart" className={styles.actionLink} aria-label="Cart">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 6h15l-1.5 9h-12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                 <path d="M6 6 5 3H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -126,7 +126,7 @@ export default function NavBar() {
               </svg>
               <span className={styles.actionText}>Cart</span>
               <span className={styles.badge} aria-label="Items in cart">{totalItems}</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function NavBar() {
         <ul className={styles.primaryList} data-open={isMobileMenuOpen || undefined}>
           {CATEGORY_ITEMS.map((item) => (
             <li key={item.label} className={styles.primaryItem}>
-              <a href={item.href} className={styles.primaryLink}>{item.label}</a>
+              <Link to={item.href} className={styles.primaryLink}>{item.label}</Link>
             </li>
           ))}
         </ul>
