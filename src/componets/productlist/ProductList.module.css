@@ -1,0 +1,22 @@
+:root {
+  --surface: #121212;
+  --border: #222222;
+  --text: #eaeaea;
+  --muted: #a3a3a3;
+  --accent: #ff002e;
+}
+
+.section { display: grid; gap: 10px; }
+.sectionHeader { display: flex; align-items: center; justify-content: space-between; }
+.sectionTitle { margin: 0; font-size: 18px; }
+.viewAll { color: #fff; text-decoration: none; font-size: 14px; }
+
+.grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.thumb { height: 120px; background: radial-gradient(100px 50px at 20% 30%, rgba(255, 255, 255, 0.08), transparent), #0e0e0e; border-bottom: 1px solid var(--border); }
+.title { margin: 8px 8px 4px; font-size: 14px; }
+.meta { display: flex; align-items: center; justify-content: space-between; color: var(--muted); margin: 0 8px 8px; font-size: 12px; }
+.price { color: #fff; font-weight: 700; }
+.button { margin: 0 8px 10px; height: 34px; border-radius: 10px; border: none; background: var(--accent); color: #fff; cursor: pointer; }
+
+

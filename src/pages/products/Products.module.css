@@ -1,0 +1,92 @@
+:root {
+  --bg: #0b0b0b;
+  --surface: #121212;
+  --border: #222222;
+  --text: #eaeaea;
+  --muted: #a3a3a3;
+  --accent: #ff002e;
+}
+
+.page {
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  padding: 24px 16px 48px;
+}
+
+.header {
+  max-width: 1280px;
+  margin: 0 auto 18px;
+}
+.title { font-size: 24px; margin: 0 0 6px; }
+.subtitle { color: var(--muted); margin: 0; }
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 992px) {
+  .content { grid-template-columns: 280px 1fr; }
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb {
+  height: 150px;
+  background: radial-gradient(120px 60px at 20% 30%, rgba(255, 255, 255, 0.08), transparent),
+              radial-gradient(120px 60px at 80% 70%, rgba(255, 0, 46, 0.18), transparent),
+              #0e0e0e;
+  border-bottom: 1px solid var(--border);
+}
+
+.cardBody { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.titleRow { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.cardTitle { margin: 0; font-size: 16px; }
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 11px;
+}
+
+.meta { display: flex; align-items: center; justify-content: space-between; }
+.price { font-weight: 700; }
+.rating { color: var(--muted); }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.button:hover { filter: brightness(1.05); }
+.button:active { transform: translateY(1px); }
+
+

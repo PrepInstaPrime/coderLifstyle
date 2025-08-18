@@ -1,0 +1,81 @@
+:root {
+  --bg: #0b0b0b;
+  --surface: #121212;
+  --border: #222222;
+  --text: #eaeaea;
+  --muted: #a3a3a3;
+  --accent: #ff002e;
+}
+
+.footer { background: var(--bg); color: var(--text); }
+
+.cta {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(0deg, #0a0a0a, #0e0e0e);
+}
+.ctaInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: grid;
+  gap: 10px;
+  text-align: center;
+}
+.ctaTitle { margin: 0; font-size: 22px; }
+.ctaText { margin: 0; color: var(--muted); }
+.ctaForm { display: grid; grid-template-columns: 1fr auto; gap: 8px; max-width: 520px; margin: 0 auto; }
+.input {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0e0e0e;
+  color: var(--text);
+}
+.button {
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0 16px;
+  cursor: pointer;
+}
+.button:hover { filter: brightness(1.05); }
+.note { color: var(--muted); font-size: 13px; }
+
+.main { padding: 28px 16px; }
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+
+.brandCol { display: grid; gap: 10px; }
+.logoLink { display: inline-flex; align-items: center; }
+.logo { height: 22px; width: auto; }
+.brandText { color: var(--muted); margin: 0; }
+.socials { display: flex; gap: 10px; }
+.social { color: #e5e5e5; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--border); background: #0f0f0f; }
+.social:hover { background: #141414; }
+
+.col { display: grid; gap: 10px; align-content: start; }
+.colTitle { margin: 0; font-size: 14px; color: #ffffff; }
+.linkList { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.link { color: var(--muted); text-decoration: none; }
+.link:hover { color: #ffffff; }
+
+.bottom { border-top: 1px solid var(--border); }
+.bottomInner { max-width: 1280px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.copy { color: var(--muted); }
+.bottomLinks { display: flex; gap: 14px; }
+.bottomLink { color: var(--muted); text-decoration: none; }
+.bottomLink:hover { color: #ffffff; }
+
+
